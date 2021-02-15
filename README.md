@@ -6,3 +6,5 @@
 ![CI](https://github.com/maks-stupak/frontend-project-lvl1/workflows/basic%20CI/badge.svg)
 
 [![asciicast](https://asciinema.org/a/390450.svg)](https://asciinema.org/a/390450)
+
+[![asciicast](https://asciinema.org/a/ShovtXkky2S6M1SLQxdLkWDQb.svg)](https://asciinema.org/a/ShovtXkky2S6M1SLQxdLkWDQb)
