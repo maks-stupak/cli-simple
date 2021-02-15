@@ -6,17 +6,20 @@ const getRandomOperation = () => {
   return operations[Math.floor(Math.random() * operations.length)];
 };
 
-const calc = (num1, num2, operation) => {
+const calc = (num1, operation, num2) => {
+  const firstNum = parseInt(num1, 10);
+  const secondNum = parseInt(num2, 10);
   let result;
+
   switch (operation) {
     case '+':
-      result = num1 + num2;
+      result = firstNum + secondNum;
       break;
     case '-':
-      result = num1 - num2;
+      result = firstNum - secondNum;
       break;
     case '*':
-      result = num1 * num2;
+      result = firstNum * secondNum;
       break;
     default:
       break;
@@ -25,17 +28,11 @@ const calc = (num1, num2, operation) => {
   return result;
 };
 
-const createQuestion = () => {
-  const num1 = getRandomNum();
-  const num2 = getRandomNum();
-  const operation = getRandomOperation();
-
-  console.log(`Question: ${num1} ${operation} ${num2}`);
-  return [num1, num2, operation];
-};
+const createQuestion = () => `${getRandomNum()} ${getRandomOperation()} ${getRandomNum()}`;
 
 const getCorrectAnswer = (question) => {
-  const correctAnswer = calc(question[0], question[1], question[2]);
+  const operands = question.split(' ');
+  const correctAnswer = calc(operands[0], operands[1], operands[2]);
   return `${correctAnswer}`;
 };
 

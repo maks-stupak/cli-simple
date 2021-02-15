@@ -5,6 +5,8 @@ const playGame = (userName, questionFunc, correctAnswerFunc) => {
 
   for (let i = 1; i <= maxRoundsNum; i += 1) {
     const question = questionFunc();
+    console.log(`Question: ${question}`);
+
     const userAnswer = cli('Your answer:');
     const correctAnswer = correctAnswerFunc(question);
 
