@@ -5,11 +5,14 @@
 
 ![CI](https://github.com/maks-stupak/frontend-project-lvl1/workflows/basic%20CI/badge.svg)
 
-brain-even
+###### brain-even
 [![asciicast](https://asciinema.org/a/390450.svg)](https://asciinema.org/a/390450)
 
-brain-calc
+###### brain-calc
 [![asciicast](https://asciinema.org/a/ShovtXkky2S6M1SLQxdLkWDQb.svg)](https://asciinema.org/a/ShovtXkky2S6M1SLQxdLkWDQb)
 
-brain-gcd
+###### brain-gcd
 [![asciicast](https://asciinema.org/a/wQgJ9q3V4lN1WRv5eA6tJqYuo.svg)](https://asciinema.org/a/wQgJ9q3V4lN1WRv5eA6tJqYuo)
+
+###### brain-progression
+[![asciicast](https://asciinema.org/a/6foD2TJmNXqNNeNwWBui1fBaT.svg)](https://asciinema.org/a/6foD2TJmNXqNNeNwWBui1fBaT)
