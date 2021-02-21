@@ -1,7 +1,7 @@
 import playGame from '../index.js';
 import getRandomNum from '../utils/random-num.js';
 
-const createQuestion = () => `${getRandomNum()} ${getRandomNum()}`;
+const createQuestion = () => `${getRandomNum(1, 20)} ${getRandomNum(1, 20)}`;
 
 const getGcdFor2Num = (num1, num2) => {
   if (!num2) {
