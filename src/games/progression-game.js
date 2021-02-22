@@ -21,10 +21,11 @@ const getQuestion = () => {
   const progression = getProgression();
   const indexOfEmpty = getRandomNum(0, progression.length);
   progression[indexOfEmpty] = '..';
-  return progression;
+  return progression.join(' ');
 };
 
-const getCorrectAnswer = (progression) => {
+const getCorrectAnswer = (progressionString) => {
+  const progression = progressionString.split(' ');
   const indexOfEmpty = progression.indexOf('..');
   let progressionDiff;
 
@@ -38,7 +39,7 @@ const getCorrectAnswer = (progression) => {
     return String(progression[1] - progressionDiff);
   }
 
-  return String(progression[0] + progressionDiff * indexOfEmpty);
+  return String(parseInt(progression[0], 10) + progressionDiff * indexOfEmpty);
 };
 
 export default (userName) => {
