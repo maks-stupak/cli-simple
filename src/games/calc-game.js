@@ -28,7 +28,7 @@ const calc = (num1, operation, num2) => {
   return result;
 };
 
-const createQuestion = () => `${getRandomNum()} ${getRandomOperation()} ${getRandomNum()}`;
+const createQuestion = () => `${getRandomNum(0, 10)} ${getRandomOperation()} ${getRandomNum(0, 10)}`;
 
 const getCorrectAnswer = (question) => {
   const operands = question.split(' ');
