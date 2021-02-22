@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
 import progressionGame from '../src/games/progression-game.js';
-import cli from '../src/utils/cli.js';
+import showGreeting from '../src/greeting.js';
 
-console.log('Welcome to the Brain Games!');
-const user = cli('May I have your name?');
-console.log(`Hello, ${user}!`);
-console.log('What number is missing in the progression?');
+const gameQuest = 'What number is missing in the progression?';
+const user = showGreeting(gameQuest);
+
 progressionGame(user);
