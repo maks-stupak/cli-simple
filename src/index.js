@@ -1,13 +1,13 @@
-import cli from './utils/cli.js';
+import makeDialog from './utils/cli.js';
+
+const maxRoundsNum = 3;
 
 const playGame = (userName, questionFunc, correctAnswerFunc) => {
-  const maxRoundsNum = 3;
-
   for (let i = 1; i <= maxRoundsNum; i += 1) {
     const question = questionFunc();
     console.log(`Question: ${question}`);
 
-    const userAnswer = cli('Your answer:');
+    const userAnswer = makeDialog('Your answer:');
     const correctAnswer = correctAnswerFunc(question);
 
     if (correctAnswer === userAnswer) {
@@ -15,14 +15,11 @@ const playGame = (userName, questionFunc, correctAnswerFunc) => {
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
-      break;
-    }
-
-    if (i === 3) {
-      console.log(`Congratulations, ${userName}!`);
-      break;
+      return;
     }
   }
+
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default playGame;
