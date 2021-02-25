@@ -18,7 +18,7 @@ A set of games running only in the command line interface
 - make brain-calc (simple arithmetic tasks)
 - make brain-even (is the number even)
 - make brain-gcd (greatest common divisor)
-- make brain-prime (is the number even)
+- make brain-prime (is the number prime)
 - make brain-progression (find the missing number in the progression)
 
 ## Usage examples:
