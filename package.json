@@ -1,7 +1,7 @@
 {
-  "name": "@hexlet/code",
+  "name": "brain-games",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/maks-stupak/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/maks-stupak/frontend-project-lvl1/actions)",
+  "description": "A set of simple cli games",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-calc": "bin/brain-calc.js",
@@ -18,7 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/maks-stupak/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Maks Stupak",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/maks-stupak/frontend-project-lvl1/issues"
