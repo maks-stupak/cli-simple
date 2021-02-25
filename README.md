@@ -1,10 +1,27 @@
-### Hexlet tests and linter status:
+# Brain games
+
 [![Actions Status](https://github.com/maks-stupak/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/maks-stupak/frontend-project-lvl1/actions)
-
-[![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/c72b0e7808b74154eeba/maintainability)](https://codeclimate.com/github/maks-stupak/frontend-project-lvl1/maintainability)
 ![CI](https://github.com/maks-stupak/frontend-project-lvl1/workflows/basic%20CI/badge.svg)
 
+A set of games running only in the command line interface
+
+## How to use this package?
+
+#### Prerequisites:
+
+* Install NodeJS v14 or later
+* npm install
+
+#### Running:
+
+- make brain-calc (simple arithmetic tasks)
+- make brain-even (is the number even)
+- make brain-gcd (greatest common divisor)
+- make brain-prime (is the number even)
+- make brain-progression (find the missing number in the progression)
+
+## Usage examples:
 ###### brain-even
 [![asciicast](https://asciinema.org/a/390450.svg)](https://asciinema.org/a/390450)
 
