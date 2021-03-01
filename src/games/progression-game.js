@@ -1,5 +1,4 @@
 import playGame from '../index.js';
-import showGreeting from '../greeting.js';
 import getRandomNum from '../utils/random-num.js';
 
 const getProgression = () => {
@@ -45,7 +44,5 @@ const getCorrectAnswer = (progressionString) => {
 
 export default () => {
   const gameQuest = 'What number is missing in the progression?';
-  const user = showGreeting(gameQuest);
-
-  playGame(user, getQuestion, getCorrectAnswer);
+  playGame(gameQuest, getQuestion, getCorrectAnswer);
 };

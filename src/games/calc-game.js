@@ -1,6 +1,5 @@
 import playGame from '../index.js';
 import getRandomNum from '../utils/random-num.js';
-import showGreeting from '../greeting.js';
 
 const getRandomOperation = () => {
   const operations = ['-', '+', '*'];
@@ -38,7 +37,6 @@ const getCorrectAnswer = (question) => {
 };
 
 export default () => {
-  const gameQuest = 'What is the result of the expression?';
-  const user = showGreeting(gameQuest);
-  playGame(user, createQuestion, getCorrectAnswer);
+  const gameRule = 'What is the result of the expression?';
+  playGame(gameRule, createQuestion, getCorrectAnswer);
 };

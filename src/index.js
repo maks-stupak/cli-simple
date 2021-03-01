@@ -1,22 +1,25 @@
-import makeDialog from './utils/cli.js';
+import readlineSync from 'readline-sync';
+import showGreeting from './greeting.js';
 
-const maxRoundsNum = 3;
+const roundsCountToWin = 3;
 
-const playGame = (userName, questionFunc, correctAnswerFunc) => {
-  for (let i = 1; i <= maxRoundsNum; i += 1) {
-    const question = questionFunc();
+const playGame = (gameRule, getQuestion, getCorrectAnswer) => {
+  const userName = showGreeting(gameRule);
+
+  for (let i = 1; i <= roundsCountToWin; i += 1) {
+    const question = getQuestion();
     console.log(`Question: ${question}`);
 
-    const userAnswer = makeDialog('Your answer:');
-    const correctAnswer = correctAnswerFunc(question);
+    const userAnswer = readlineSync.question('Your answer: ');
+    const correctAnswer = getCorrectAnswer(question);
 
-    if (correctAnswer === userAnswer) {
-      console.log('Correct!');
-    } else {
+    if (userAnswer !== correctAnswer) {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
+
+    console.log('Correct!');
   }
 
   console.log(`Congratulations, ${userName}!`);

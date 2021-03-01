@@ -1,5 +1,4 @@
 import playGame from '../index.js';
-import showGreeting from '../greeting.js';
 import getRandomNum from '../utils/random-num.js';
 
 const createQuestion = () => `${getRandomNum(1, 20)} ${getRandomNum(1, 20)}`;
@@ -28,7 +27,5 @@ const getCorrectAnswer = (question) => {
 
 export default () => {
   const gameQuest = 'Find the greatest common divisor of given numbers.';
-  const user = showGreeting(gameQuest);
-
-  playGame(user, createQuestion, getCorrectAnswer);
+  playGame(gameQuest, createQuestion, getCorrectAnswer);
 };
