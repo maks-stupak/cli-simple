@@ -4,22 +4,23 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/c72b0e7808b74154eeba/maintainability)](https://codeclimate.com/github/maks-stupak/frontend-project-lvl1/maintainability)
 ![CI](https://github.com/maks-stupak/frontend-project-lvl1/workflows/basic%20CI/badge.svg)
 
-A set of games running only in the command line interface
+A set of games running only in the command line interface. Each game consists of questions, the answers to which must be typed. To win, you need to correctly answer three questions in a row.
 
 ## How to use this package?
 
 #### Prerequisites:
 
 * Install NodeJS v14 or later
-* npm install
+* Clone this repository
+* In directory with the cloned package run the `npm link` command
 
 #### Running:
 
-- make brain-calc (simple arithmetic tasks)
-- make brain-even (is the number even)
-- make brain-gcd (greatest common divisor)
-- make brain-prime (is the number prime)
-- make brain-progression (find the missing number in the progression)
+- `brain-calc` (simple arithmetic tasks)
+- `brain-even` (is the number even)
+- `brain-gcd` (greatest common divisor)
+- `brain-prime` (is the number prime)
+- `brain-progression` (find the missing number in the progression)
 
 ## Usage examples:
 ###### brain-even
