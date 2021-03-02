@@ -7,19 +7,17 @@ const getRandomOperation = () => {
 };
 
 const calc = (num1, operation, num2) => {
-  const firstNum = parseInt(num1, 10);
-  const secondNum = parseInt(num2, 10);
   let result;
 
   switch (operation) {
     case '+':
-      result = firstNum + secondNum;
+      result = num1 + num2;
       break;
     case '-':
-      result = firstNum - secondNum;
+      result = num1 - num2;
       break;
     case '*':
-      result = firstNum * secondNum;
+      result = num1 * num2;
       break;
     default:
       break;
@@ -28,15 +26,21 @@ const calc = (num1, operation, num2) => {
   return result;
 };
 
-const createQuestion = () => `${getRandomNum(0, 10)} ${getRandomOperation()} ${getRandomNum(0, 10)}`;
+const createGameRound = () => {
+  const firstOperand = getRandomNum(0, 10);
+  const secondOperand = getRandomNum(0, 10);
+  const operation = getRandomOperation();
 
-const getCorrectAnswer = (question) => {
-  const operands = question.split(' ');
-  const correctAnswer = calc(operands[0], operands[1], operands[2]);
-  return `${correctAnswer}`;
+  const roundQuestion = `${firstOperand} ${operation} ${secondOperand}`;
+  const roundAnswer = String(calc(firstOperand, operation, secondOperand));
+
+  return {
+    question: roundQuestion,
+    correctAnswer: roundAnswer,
+  };
 };
 
 export default () => {
   const gameRule = 'What is the result of the expression?';
-  playGame(gameRule, createQuestion, getCorrectAnswer);
+  playGame(gameRule, createGameRound);
 };

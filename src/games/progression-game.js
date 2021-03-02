@@ -17,32 +17,20 @@ const getProgression = () => {
   return progression;
 };
 
-const getQuestion = () => {
+const createGameRound = () => {
   const progression = getProgression();
   const indexOfEmpty = getRandomNum(0, progression.length);
+  const roundAnswer = progression[indexOfEmpty];
   progression[indexOfEmpty] = '..';
-  return progression.join(' ');
+
+  return {
+    question: progression.join(' '),
+    correctAnswer: String(roundAnswer),
+  };
 };
 
-const getCorrectAnswer = (progressionString) => {
-  const progression = progressionString.split(' ');
-  const indexOfEmpty = progression.indexOf('..');
-  let progressionDiff;
-
-  if (indexOfEmpty < 2) {
-    progressionDiff = progression[progression.length - 1] - progression[progression.length - 2];
-  } else {
-    progressionDiff = progression[1] - progression[0];
-  }
-
-  if (indexOfEmpty === 0) {
-    return String(progression[1] - progressionDiff);
-  }
-
-  return String(parseInt(progression[0], 10) + progressionDiff * indexOfEmpty);
-};
+const gameRule = 'What number is missing in the progression?';
 
 export default () => {
-  const gameQuest = 'What number is missing in the progression?';
-  playGame(gameQuest, getQuestion, getCorrectAnswer);
+  playGame(gameRule, createGameRound);
 };

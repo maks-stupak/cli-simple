@@ -9,9 +9,17 @@ const isPrime = (number) => {
   return number > 1;
 };
 
-const getCorrectAnswer = (question) => (isPrime(question) ? 'yes' : 'no');
+const createGameRound = () => {
+  const roundQuestion = getRandomNum();
+  const roundAnswer = isPrime(roundQuestion) ? 'yes' : 'no';
+
+  return {
+    question: roundQuestion,
+    correctAnswer: roundAnswer,
+  };
+};
 
 export default () => {
-  const gameQuest = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  playGame(gameQuest, getRandomNum, getCorrectAnswer);
+  const gameRule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  playGame(gameRule, createGameRound);
 };

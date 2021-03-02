@@ -1,8 +1,6 @@
 import playGame from '../index.js';
 import getRandomNum from '../utils/random-num.js';
 
-const createQuestion = () => `${getRandomNum(1, 20)} ${getRandomNum(1, 20)}`;
-
 const getGcdFor2Num = (num1, num2) => {
   if (!num2) {
     return num1;
@@ -19,13 +17,17 @@ const getGsd = (nums) => {
   return factor;
 };
 
-const getCorrectAnswer = (question) => {
-  const nums = question.split(' ');
-  const correctAnswer = getGsd(nums);
-  return `${correctAnswer}`;
+const createGameRound = () => {
+  const firstNumber = getRandomNum(1, 20);
+  const secondNumber = getRandomNum(1, 20);
+
+  return {
+    question: `${firstNumber} ${secondNumber}`,
+    correctAnswer: String(getGsd([firstNumber, secondNumber])),
+  };
 };
 
 export default () => {
-  const gameQuest = 'Find the greatest common divisor of given numbers.';
-  playGame(gameQuest, createQuestion, getCorrectAnswer);
+  const gameRule = 'Find the greatest common divisor of given numbers.';
+  playGame(gameRule, createGameRound);
 };
