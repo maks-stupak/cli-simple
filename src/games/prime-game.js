@@ -1,5 +1,5 @@
 import playGame from '../index.js';
-import getRandomNum from '../utils/random-num.js';
+import getRandomNumber from '../utils.js';
 
 const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
@@ -10,7 +10,7 @@ const isPrime = (number) => {
 };
 
 const createGameRound = () => {
-  const roundQuestion = getRandomNum();
+  const roundQuestion = getRandomNumber();
   const roundAnswer = isPrime(roundQuestion) ? 'yes' : 'no';
 
   return {

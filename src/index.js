@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
-import showGreeting from './greeting.js';
+import introduceUser from './greeting.js';
 
 const roundsCountToWin = 3;
 
 const playGame = (gameRule, createGameRound) => {
-  const userName = showGreeting(gameRule);
+  const userName = introduceUser();
+  console.log(gameRule);
 
   for (let i = 1; i <= roundsCountToWin; i += 1) {
     const gameRound = createGameRound();

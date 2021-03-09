@@ -1,38 +1,38 @@
 import playGame from '../index.js';
-import getRandomNum from '../utils/random-num.js';
+import getRandomNumber from '../utils.js';
 
 const getRandomOperation = () => {
   const operations = ['-', '+', '*'];
-  return operations[Math.floor(Math.random() * operations.length)];
+  return operations[getRandomNumber(0, operations.length)];
 };
 
-const calc = (num1, operation, num2) => {
+const calc = (operation, operand1, operand2) => {
   let result;
 
   switch (operation) {
     case '+':
-      result = num1 + num2;
+      result = operand1 + operand2;
       break;
     case '-':
-      result = num1 - num2;
+      result = operand1 - operand2;
       break;
     case '*':
-      result = num1 * num2;
+      result = operand1 * operand2;
       break;
     default:
-      break;
+      throw new Error('Invalid operation');
   }
 
   return result;
 };
 
 const createGameRound = () => {
-  const firstOperand = getRandomNum(0, 10);
-  const secondOperand = getRandomNum(0, 10);
+  const firstOperand = getRandomNumber(0, 10);
+  const secondOperand = getRandomNumber(0, 10);
   const operation = getRandomOperation();
 
   const roundQuestion = `${firstOperand} ${operation} ${secondOperand}`;
-  const roundAnswer = String(calc(firstOperand, operation, secondOperand));
+  const roundAnswer = String(calc(operation, firstOperand, secondOperand));
 
   return {
     question: roundQuestion,
