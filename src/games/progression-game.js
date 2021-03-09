@@ -2,16 +2,14 @@ import playGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const getProgression = () => {
-  const firstNum = getRandomNumber();
+  const firstNumber = getRandomNumber();
   const progressionLength = getRandomNumber(5, 10);
   const diff = getRandomNumber(1, 10);
 
-  const progression = [firstNum];
-  let currentNum = firstNum;
+  const progression = [];
 
-  for (let i = 0; i < progressionLength; i += 1) {
-    currentNum += diff;
-    progression.push(currentNum);
+  for (let i = 1; i < progressionLength; i += 1) {
+    progression.push(firstNumber + (i - 1) * diff);
   }
 
   return progression;

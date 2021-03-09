@@ -15,7 +15,7 @@ const createGameRound = () => {
 
   return {
     question: `${firstNumber} ${secondNumber}`,
-    correctAnswer: String(gcd([firstNumber, secondNumber])),
+    correctAnswer: String(gcd(firstNumber, secondNumber)),
   };
 };
 

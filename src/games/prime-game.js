@@ -2,7 +2,7 @@ import playGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const isPrime = (number) => {
-  for (let i = 2; i < number; i += 1) {
+  for (let i = 2, s = Math.sqrt(number); i <= s; i += 1) {
     if (number % i === 0) return false;
   }
 
