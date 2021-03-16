@@ -19,7 +19,8 @@ const createGameRound = () => {
   };
 };
 
+const gameRule = 'Find the greatest common divisor of given numbers.';
+
 export default () => {
-  const gameRule = 'Find the greatest common divisor of given numbers.';
   playGame(gameRule, createGameRound);
 };

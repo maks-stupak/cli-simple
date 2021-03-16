@@ -1,14 +1,10 @@
 import playGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const getProgression = () => {
-  const firstNumber = getRandomNumber();
-  const progressionLength = getRandomNumber(5, 10);
-  const diff = getRandomNumber(1, 10);
-
+const getProgression = (firstNumber, diff, length) => {
   const progression = [];
 
-  for (let i = 1; i < progressionLength; i += 1) {
+  for (let i = 1; i < length; i += 1) {
     progression.push(firstNumber + (i - 1) * diff);
   }
 
@@ -16,7 +12,11 @@ const getProgression = () => {
 };
 
 const createGameRound = () => {
-  const progression = getProgression();
+  const progressionFirstNumber = getRandomNumber();
+  const progressionDiff = getRandomNumber(1, 10);
+  const progressionLength = getRandomNumber(6, 10);
+
+  const progression = getProgression(progressionFirstNumber, progressionDiff, progressionLength);
   const indexOfEmpty = getRandomNumber(0, progression.length);
   const roundAnswer = progression[indexOfEmpty];
   progression[indexOfEmpty] = '..';

@@ -12,7 +12,8 @@ const createGameRound = () => {
   };
 };
 
+const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 export default () => {
-  const gameRule = 'Answer "yes" if the number is even, otherwise answer "no".';
   playGame(gameRule, createGameRound);
 };

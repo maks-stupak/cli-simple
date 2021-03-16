@@ -1,29 +1,20 @@
 import playGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
-const getRandomOperation = () => {
-  const operations = ['-', '+', '*'];
-  return operations[getRandomNumber(0, operations.length)];
-};
+const operations = ['-', '+', '*'];
+const getRandomOperation = () => operations[getRandomNumber(0, operations.length)];
 
 const calc = (operation, operand1, operand2) => {
-  let result;
-
   switch (operation) {
     case '+':
-      result = operand1 + operand2;
-      break;
+      return operand1 + operand2;
     case '-':
-      result = operand1 - operand2;
-      break;
+      return operand1 - operand2;
     case '*':
-      result = operand1 * operand2;
-      break;
+      return operand1 * operand2;
     default:
       throw new Error('Invalid operation');
   }
-
-  return result;
 };
 
 const createGameRound = () => {
@@ -40,7 +31,8 @@ const createGameRound = () => {
   };
 };
 
+const gameRule = 'What is the result of the expression?';
+
 export default () => {
-  const gameRule = 'What is the result of the expression?';
   playGame(gameRule, createGameRound);
 };

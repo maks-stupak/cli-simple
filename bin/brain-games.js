@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import introduceUser from '../src/greeting.js';
+import runGameIntro from '../src/games/game-intro.js';
 
-introduceUser();
+runGameIntro();
